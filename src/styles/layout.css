@@ -1,0 +1,145 @@
+/* ==========================================================
+   HABITGUARD — LAYOUT
+   3-column dashboard grid system
+   ========================================================== */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+/* --- MAIN DASHBOARD GRID --- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 280px 1fr 1.3fr;
+  gap: var(--space-5);
+  height: 100vh;
+  padding: var(--space-5);
+  overflow: hidden;
+}
+
+/* --- PANELS --- */
+.panel {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: var(--space-2);
+}
+
+.panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Left Panel: user context + controls */
+.panel-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-right: var(--space-3);
+}
+
+/* Center Panel: content + suggestions */
+.panel-center {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-right: var(--space-2);
+}
+
+/* Right Panel: main functional area */
+.panel-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-right: var(--space-1);
+}
+
+/* Right panel top area: todos + integrations side by side */
+.right-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: var(--space-4);
+}
+
+/* Todos section: prediction + pattern + list */
+.todos-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Integrations section: spotify + more */
+.integrations-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Analytics section */
+.analytics-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Analytics sub-grid: stat cards + chart */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: var(--space-3);
+}
+
+/* --- SHARED HEADER PATTERN --- */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.card-header h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.link-subtle {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.link-subtle:hover {
+  color: var(--color-primary);
+}
+
+/* --- RESPONSIVE (for resizable window) --- */
+@media (max-width: 1500px) {
+  .dashboard {
+    grid-template-columns: 260px 1fr 1.2fr;
+    gap: var(--space-4);
+    padding: var(--space-4);
+  }
+
+  .right-top-grid {
+    grid-template-columns: 1fr 180px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .dashboard {
+    grid-template-columns: 240px 1fr 1.1fr;
+    gap: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .analytics-grid .analytics-chart {
+    grid-column: 1 / -1;
+  }
+}

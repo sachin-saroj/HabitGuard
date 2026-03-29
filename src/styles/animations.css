@@ -1,0 +1,283 @@
+/* ==========================================================
+   HABITGUARD — ANIMATIONS
+   Micro-interactions, transitions, and entrance effects
+   ========================================================== */
+
+/* --- Entrance Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Animation Classes --- */
+.anim-fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+}
+
+.anim-fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+}
+
+.anim-fade-in-down {
+  animation: fadeInDown var(--duration-slow) var(--ease-out) both;
+}
+
+.anim-scale-in {
+  animation: scaleIn var(--duration-slow) var(--ease-spring) both;
+}
+
+.anim-slide-up {
+  animation: slideInUp var(--duration-slower) var(--ease-out) both;
+}
+
+/* Staggered delays */
+.anim-delay-1 { animation-delay: 50ms; }
+.anim-delay-2 { animation-delay: 100ms; }
+.anim-delay-3 { animation-delay: 150ms; }
+.anim-delay-4 { animation-delay: 200ms; }
+.anim-delay-5 { animation-delay: 250ms; }
+.anim-delay-6 { animation-delay: 300ms; }
+.anim-delay-7 { animation-delay: 350ms; }
+.anim-delay-8 { animation-delay: 400ms; }
+
+/* --- Checkbox Tick Animation --- */
+@keyframes checkTick {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.todo-checkbox.checked::after {
+  animation: checkTick var(--duration-base) var(--ease-spring) both;
+}
+
+/* Checkbox ripple ring on check */
+@keyframes checkRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+.todo-checkbox.just-checked {
+  animation: checkRipple var(--duration-slow) var(--ease-out);
+}
+
+/* --- Prediction Card Pulse --- */
+@keyframes dangerPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-card);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12),
+                0 2px 8px rgba(239, 68, 68, 0.15);
+  }
+}
+
+.prediction-card.risk-high {
+  animation: dangerPulse 3s ease-in-out infinite;
+}
+
+/* --- Card Hover Lift --- */
+.card-hoverable {
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+.card-hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- Bar Chart Growth Animation --- */
+@keyframes barGrow {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.chart-bar {
+  animation: barGrow var(--duration-slower) var(--ease-out) both;
+}
+
+.chart-bar:nth-child(1) { animation-delay: 100ms; }
+.chart-bar:nth-child(2) { animation-delay: 200ms; }
+.chart-bar:nth-child(3) { animation-delay: 300ms; }
+.chart-bar:nth-child(4) { animation-delay: 400ms; }
+.chart-bar:nth-child(5) { animation-delay: 500ms; }
+.chart-bar:nth-child(6) { animation-delay: 600ms; }
+
+/* --- Calendar Day Pop-in --- */
+@keyframes dayPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.calendar-day {
+  animation: dayPopIn var(--duration-base) var(--ease-spring) both;
+}
+
+/* Stagger calendar days */
+.calendar-day:nth-child(1) { animation-delay: 10ms; }
+.calendar-day:nth-child(2) { animation-delay: 20ms; }
+.calendar-day:nth-child(3) { animation-delay: 30ms; }
+.calendar-day:nth-child(4) { animation-delay: 40ms; }
+.calendar-day:nth-child(5) { animation-delay: 50ms; }
+.calendar-day:nth-child(6) { animation-delay: 60ms; }
+.calendar-day:nth-child(7) { animation-delay: 70ms; }
+.calendar-day:nth-child(8) { animation-delay: 80ms; }
+.calendar-day:nth-child(9) { animation-delay: 90ms; }
+.calendar-day:nth-child(10) { animation-delay: 100ms; }
+.calendar-day:nth-child(11) { animation-delay: 110ms; }
+.calendar-day:nth-child(12) { animation-delay: 120ms; }
+.calendar-day:nth-child(13) { animation-delay: 130ms; }
+.calendar-day:nth-child(14) { animation-delay: 140ms; }
+.calendar-day:nth-child(n+15) { animation-delay: 150ms; }
+
+/* --- Todo Item Entrance --- */
+@keyframes todoSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.todo-item {
+  animation: todoSlideIn var(--duration-base) var(--ease-out) both;
+}
+
+.todo-item:nth-child(1) { animation-delay: 80ms; }
+.todo-item:nth-child(2) { animation-delay: 140ms; }
+.todo-item:nth-child(3) { animation-delay: 200ms; }
+.todo-item:nth-child(4) { animation-delay: 260ms; }
+.todo-item:nth-child(5) { animation-delay: 320ms; }
+.todo-item:nth-child(6) { animation-delay: 380ms; }
+.todo-item:nth-child(7) { animation-delay: 440ms; }
+.todo-item:nth-child(8) { animation-delay: 500ms; }
+
+/* --- Suggestion Card Hover Slide --- */
+.suggestion-card {
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+/* --- Celebration Bounce (for all complete) --- */
+@keyframes celebrateBounce {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.05) rotate(-2deg); }
+  50% { transform: scale(1.1); }
+  75% { transform: scale(1.05) rotate(2deg); }
+}
+
+.celebrate {
+  animation: celebrateBounce 0.8s var(--ease-spring);
+}
+
+/* --- Shimmer Loading (for future use) --- */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg) 0%,
+    var(--color-bg-elevated) 50%,
+    var(--color-bg) 100%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Disable all animations for reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
