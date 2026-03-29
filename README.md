@@ -76,7 +76,7 @@ You usually skip every 3rd day → **⚠️ High Risk Tomorrow**
 
 <div align="center">
   <!-- Side-by-side images -->
-  <img src="screenshots/todos.png" alt="Today's Todos & Predictions" width="49%">
+  <img src="screenshots/todos.png" alt="Today's Todos & Predictions" width="25%">
   <img src="screenshots/sidebar.png" alt="Calendar Navigation" width="49%">
 </div>
 
