@@ -68,7 +68,7 @@ You usually skip every 3rd day → **⚠️ High Risk Tomorrow**
 
 <div align="center">
   <!-- Full Size Dashboard Image -->
-  <img src="screenshots/dashboard.png" alt="Full Application Dashboard" width="100%">
+  <img src="screenshots/dashboard.png" alt="Full Application Dashboard" width="60%">
   <p><em>HabitGuard Full Dashboard Layout</em></p>
 </div>
 
@@ -77,15 +77,15 @@ You usually skip every 3rd day → **⚠️ High Risk Tomorrow**
 <div align="center">
   <!-- Side-by-side images -->
   <img src="screenshots/todos.png" alt="Today's Todos & Predictions" width="25%">
-  <img src="screenshots/sidebar.png" alt="Calendar Navigation" width="49%">
+  <img src="screenshots/sidebar.png" alt="Calendar Navigation" width="25%">
 </div>
 
 <br>
 
 <div align="center">
   <!-- Side-by-side images -->
-  <img src="screenshots/widgets.png" alt="Context & Suggestions Widgets" width="49%">
-  <img src="screenshots/analytics.png" alt="Analytics & Insights" width="49%">
+  <img src="screenshots/widgets.png" alt="Context & Suggestions Widgets" width="25%">
+  <img src="screenshots/analytics.png" alt="Analytics & Insights" width="25%">
 </div>
 
 > **Note:** Please create a folder named `screenshots` in your repository and save your chat images there as `dashboard.png`, `todos.png`, etc. to display them properly here.
